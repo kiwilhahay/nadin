@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Nadin</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* =========================
+           HALAMAN 1
+        ========================= */
+
+        #halaman1 {
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9dcc,
+                    #ffd6e8,
+                    #ffb6d9
+                );
+        }
+
+        /* Kotak tengah */
+
+        .kotak {
+            position: relative;
+            z-index: 10;
+
+            text-align: center;
+
+            padding: 40px 50px;
+
+            background: rgba(255, 255, 255, 0.35);
+
+            border: 2px solid rgba(255, 255, 255, 0.5);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 10px 30px rgba(150, 50, 100, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.2);
+
+            backdrop-filter: blur(8px);
+        }
+
+        /* Tulisan halaman pertama */
+
+        .kotak h1 {
+            color: #d63384;
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+
+            animation: denyut 1.3s infinite;
+        }
+
+        .kotak p {
+            color: #a52a65;
+
+            font-size: 20px;
+
+            margin-bottom: 25px;
+        }
+
+        /* Tombol */
+
+        .tombol {
+            border: none;
+
+            background: #ff4f9a;
+
+            color: white;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            padding: 15px 45px;
+
+            border-radius: 50px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 6px 15px rgba(200, 30, 100, 0.3);
+
+            transition: 0.3s;
+
+            animation: tombolDenyut 1.5s infinite;
+        }
+
+        .tombol:hover {
+            background: #e83e8c;
+
+            transform: scale(1.08);
+        }
+
+        .tombol:active {
+            transform: scale(0.95);
+        }
+
+
+        /* =========================
+           BUNGA HALAMAN 1
+        ========================= */
+
+        .bunga {
+            position: absolute;
+
+            font-size: 45px;
+
+            user-select: none;
+
+            animation: melayang 4s ease-in-out infinite;
+
+            z-index: 1;
+        }
+
+        .bunga1 {
+            top: 5%;
+            left: 5%;
+        }
+
+        .bunga2 {
+            top: 15%;
+            left: 25%;
+            animation-delay: 1s;
+        }
+
+        .bunga3 {
+            top: 8%;
+            right: 8%;
+            animation-delay: 2s;
+        }
+
+        .bunga4 {
+            top: 35%;
+            left: 8%;
+            animation-delay: 1.5s;
+        }
+
+        .bunga5 {
+            top: 45%;
+            right: 7%;
+            animation-delay: 2.5s;
+        }
+
+        .bunga6 {
+            bottom: 10%;
+            left: 8%;
+            animation-delay: 1s;
+        }
+
+        .bunga7 {
+            bottom: 5%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .bunga8 {
+            bottom: 20%;
+            left: 30%;
+            animation-delay: 3s;
+        }
+
+        .bunga9 {
+            top: 25%;
+            right: 28%;
+            animation-delay: 1.5s;
+        }
+
+        .bunga10 {
+            bottom: 30%;
+            right: 30%;
+            animation-delay: 2.5s;
+        }
+
+        .bunga11 {
+            top: 55%;
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .bunga12 {
+            bottom: 8%;
+            left: 50%;
+            animation-delay: 2s;
+        }
+
+
+        /* =========================
+           HALAMAN 2
+        ========================= */
+
+        #halaman2 {
+            display: none;
+
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff8fc5,
+                    #ffd1e5,
+                    #ffacd4
+                );
+        }
+
+        .ucapan {
+            position: relative;
+
+            z-index: 10;
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        .ucapan h1 {
+            color: #d81b73;
+
+            font-size: 70px;
+
+            font-weight: bold;
+
+            line-height: 1.2;
+
+            text-shadow:
+                3px 3px 8px rgba(150, 0, 70, 0.2);
+
+            animation: denyut 1.3s infinite;
+        }
+
+        .ucapan p {
+            margin-top: 25px;
+
+            color: #a51c5b;
+
+            font-size: 24px;
+        }
+
+
+        /* =========================
+           BUNGA HALAMAN 2
+        ========================= */
+
+        .bunga2page {
+            position: absolute;
+
+            font-size: 55px;
+
+            user-select: none;
+
+            animation: melayang2 5s ease-in-out infinite;
+
+            z-index: 1;
+        }
+
+        .b1 {
+            top: 5%;
+            left: 5%;
+        }
+
+        .b2 {
+            top: 12%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .b3 {
+            bottom: 10%;
+            left: 7%;
+            animation-delay: 2s;
+        }
+
+        .b4 {
+            bottom: 5%;
+            right: 8%;
+            animation-delay: 3s;
+        }
+
+        .b5 {
+            top: 40%;
+            left: 8%;
+            animation-delay: 1.5s;
+        }
+
+        .b6 {
+            top: 45%;
+            right: 8%;
+            animation-delay: 2.5s;
+        }
+
+        .b7 {
+            bottom: 25%;
+            left: 25%;
+            animation-delay: 1s;
+        }
+
+        .b8 {
+            top: 20%;
+            right: 30%;
+            animation-delay: 2s;
+        }
+
+        .b9 {
+            bottom: 20%;
+            right: 28%;
+            animation-delay: 3s;
+        }
+
+        .b10 {
+            top: 10%;
+            left: 40%;
+            animation-delay: 2s;
+        }
+
+
+        /* =========================
+           ANIMASI
+        ========================= */
+
+        @keyframes denyut {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+
+        }
+
+        @keyframes tombolDenyut {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+
+        }
+
+        @keyframes melayang {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-18px)
+                    rotate(10deg);
+            }
+
+        }
+
+        @keyframes melayang2 {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-5deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-25px)
+                    rotate(10deg);
+            }
+
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .kotak {
+                width: 85%;
+
+                padding: 35px 20px;
+            }
+
+            .kotak h1 {
+                font-size: 30px;
+            }
+
+            .kotak p {
+                font-size: 17px;
+            }
+
+            .tombol {
+                font-size: 18px;
+
+                padding: 13px 30px;
+            }
+
+            .ucapan h1 {
+                font-size: 40px;
+            }
+
+            .ucapan p {
+                font-size: 18px;
+            }
+
+            .bunga {
+                font-size: 32px;
+            }
+
+            .bunga2page {
+                font-size: 35px;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ==================================
+         HALAMAN PERTAMA
+    =================================== -->
+
+    <section id="halaman1">
+
+        <!-- Bunga -->
+
+        <div class="bunga bunga1">🌸</div>
+        <div class="bunga bunga2">🌷</div>
+        <div class="bunga bunga3">🌸</div>
+        <div class="bunga bunga4">🌼</div>
+        <div class="bunga bunga5">🌸</div>
+        <div class="bunga bunga6">🌷</div>
+        <div class="bunga bunga7">🌼</div>
+        <div class="bunga bunga8">🌸</div>
+        <div class="bunga bunga9">🌷</div>
+        <div class="bunga bunga10">🌸</div>
+        <div class="bunga bunga11">🌼</div>
+        <div class="bunga bunga12">🌸</div>
+
+
+        <!-- Kotak -->
+
+        <div class="kotak">
+
+            <h1>💗 Hai Nadin 💗</h1>
+
+
+            <button
+                class="tombol"
+                onclick="bukaUcapan()">
+
+                💗 SENTIL 💗
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================
+         HALAMAN KEDUA
+    =================================== -->
+
+    <section id="halaman2">
+
+        <!-- Bunga -->
+
+        <div class="bunga2page b1">🌸</div>
+        <div class="bunga2page b2">🌷</div>
+        <div class="bunga2page b3">🌼</div>
+        <div class="bunga2page b4">🌸</div>
+        <div class="bunga2page b5">🌷</div>
+        <div class="bunga2page b6">🌸</div>
+        <div class="bunga2page b7">🌼</div>
+        <div class="bunga2page b8">🌸</div>
+        <div class="bunga2page b9">🌷</div>
+        <div class="bunga2page b10">🌸</div>
+
+
+        <!-- Ucapan -->
+
+        <div class="ucapan">
+            <p>💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗</p>
+
+            <h1>
+                HAPPY BIRTHDAY<br>
+                NADIN
+            </h1>
+
+            <p>💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗</p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================
+         JAVASCRIPT
+    =================================== -->
+
+    <script>
+
+        function bukaUcapan() {
+
+            const halaman1 =
+                document.getElementById("halaman1");
+
+            const halaman2 =
+                document.getElementById("halaman2");
+
+
+            halaman1.style.display = "none";
+
+            halaman2.style.display = "flex";
+
+        }
+
+    </script>
+
+</body>
+</html>
